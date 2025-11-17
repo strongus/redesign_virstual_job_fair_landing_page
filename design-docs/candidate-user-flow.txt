@@ -1,0 +1,10 @@
+Candidate User Workflow for Virtual Career Fair Event 
+
+1. Candidate completes the event sign-up process on CharterSchoolJobs.com which include providing basic contact information, the type of job they seek, any state teaching or pupil services certifications they hold, and uploading a current copy of their resume.
+2. The candidate's resume and credentials are reviewed by a member of our team to determine if they meet the minimum qualifications to participate in the fair.
+3. The candidate is then notified via email whether or not they are approved to participate.
+4. If approved, the candidate is admitted to the event's Candidate Portal where they can view participating schools' profile and what job-types for which they are recruiting.
+5. The candidate, through the Candidate Portal submits requests to schools they would like to interview with at the event. 
+6. Schools review candidate interview requests (which includes access to the candidate's resume submitted when they signed up) and approves or denies the interview request.
+7. If approved, the candidate can then (in the Candidate Portal) schedule a specific 10-minute interview time-slot.
+8. On event day, at the allotted time, (through the Candidate Portal) the candidate connects to the video meeting room where 1 - 3 members of the school team conduct the interview.
