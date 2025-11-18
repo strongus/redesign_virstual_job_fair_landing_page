@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro New York Online Career Fair - Jan 15, 2026</title>
 
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Material Design 3 Web Components -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
         :root {
-            /* Material Design 3 Color Tokens - Custom Vibrant Theme */
-            --md-sys-color-primary: #2563eb;
+            /* Custom Color Scheme - Green Primary, Gray Accent */
+            --md-sys-color-primary: #4ead5b;
             --md-sys-color-on-primary: #FFFFFF;
-            --md-sys-color-primary-container: #dbeafe;
-            --md-sys-color-on-primary-container: #1e3a8a;
-            --md-sys-color-secondary: #0891b2;
+            --md-sys-color-primary-container: #e8f5ea;
+            --md-sys-color-on-primary-container: #1e4620;
+            --md-sys-color-secondary: #b3b3b3;
             --md-sys-color-on-secondary: #FFFFFF;
-            --md-sys-color-secondary-container: #cffafe;
-            --md-sys-color-on-secondary-container: #164e63;
-            --md-sys-color-tertiary: #8b5cf6;
+            --md-sys-color-secondary-container: #f5f5f5;
+            --md-sys-color-on-secondary-container: #4a4a4a;
+            --md-sys-color-tertiary: #4ead5b;
             --md-sys-color-on-tertiary: #FFFFFF;
             --md-sys-color-surface: #FFFFFF;
             --md-sys-color-on-surface: #1e293b;
-            --md-sys-color-surface-variant: #f1f5f9;
+            --md-sys-color-surface-variant: #f8faf9;
             --md-sys-color-on-surface-variant: #475569;
-            --md-sys-color-outline: #cbd5e1;
+            --md-sys-color-outline: #e2e8f0;
             --md-sys-color-error: #dc2626;
             --md-sys-color-error-container: #fee2e2;
 
@@ -203,7 +206,7 @@
 
         /* Hero Section with Material Design */
         .hero-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            background: linear-gradient(135deg, #f0fdf4 0%, #e8f5ea 50%, #d1f0d9 100%);
             padding: 0 24px 80px;
             margin-top: -60px;
             padding-top: 120px;
@@ -221,8 +224,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(8, 145, 178, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(78, 173, 91, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(179, 179, 179, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -462,14 +465,14 @@
 
         /* For Candidates Section */
         .for-candidates-section {
-            background: var(--md-sys-color-surface);
+            background: #FFFFFF;
             padding: 80px 24px;
             border-top: 4px solid var(--md-sys-color-primary);
         }
 
         /* For Schools Section */
         .for-schools-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 50%, #eeeeee 100%);
             padding: 80px 24px;
             border-top: 4px solid var(--md-sys-color-secondary);
             position: relative;
@@ -483,8 +486,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(8, 145, 178, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(179, 179, 179, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(78, 173, 91, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -544,7 +547,7 @@
         /* For Schools benefit cards - distinct styling */
         .for-schools-section .benefit-card {
             background: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(8, 145, 178, 0.2);
+            border: 2px solid rgba(179, 179, 179, 0.3);
             backdrop-filter: blur(10px);
         }
 
@@ -603,6 +606,160 @@
             font-style: italic;
         }
 
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-dialog {
+            background: var(--md-sys-color-surface);
+            border-radius: 28px;
+            box-shadow: var(--md-sys-elevation-4);
+            max-width: 560px;
+            width: 90%;
+            max-height: 90vh;
+            overflow: auto;
+            animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-header {
+            padding: 24px 24px 16px;
+            border-bottom: 1px solid var(--md-sys-color-outline);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--md-sys-color-on-surface);
+            margin: 0;
+        }
+
+        .modal-subtitle {
+            font-size: 0.875rem;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-top: 4px;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .modal-option-card {
+            background: var(--md-sys-color-surface);
+            border: 2px solid var(--md-sys-color-outline);
+            border-radius: 16px;
+            padding: 32px 24px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .modal-option-card:hover {
+            border-color: var(--md-sys-color-primary);
+            background: var(--md-sys-color-primary-container);
+            transform: translateY(-2px);
+            box-shadow: var(--md-sys-elevation-2);
+        }
+
+        .modal-option-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--md-sys-color-primary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-option-card:hover .modal-option-icon {
+            background: var(--md-sys-color-primary);
+        }
+
+        .modal-option-icon .material-icons {
+            font-size: 32px;
+            color: var(--md-sys-color-primary);
+        }
+
+        .modal-option-card:hover .modal-option-icon .material-icons {
+            color: var(--md-sys-color-on-primary);
+        }
+
+        .modal-option-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--md-sys-color-on-surface);
+            margin: 0;
+        }
+
+        .modal-option-description {
+            font-size: 0.875rem;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.5;
+        }
+
+        .modal-footer {
+            padding: 16px 24px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .modal-close-button {
+            background: transparent;
+            border: none;
+            color: var(--md-sys-color-on-surface-variant);
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-close-button:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-container {
@@ -655,6 +812,10 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
+
+            .modal-options {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -668,11 +829,10 @@
             <nav class="nav-actions">
                 <a href="#for-teachers" class="md-text-button">For Candidates</a>
                 <a href="#for-schools" class="md-text-button">For Schools</a>
-                <a href="#how-it-works" class="md-text-button">How It Works</a>
-                <a href="#register" class="md-filled-button">
+                <button id="quickRegisterBtn" class="md-filled-button">
                     Quick Register
                     <span class="material-icons" style="font-size: 18px;">arrow_forward</span>
-                </a>
+                </button>
             </nav>
         </div>
     </header>
@@ -767,7 +927,7 @@
                     <span class="material-icons" style="font-size: 20px;">school</span>
                     <span>For Job Seekers</span>
                 </div>
-                <h2 class="section-title">Why Choose a Charter School Career?</h2>
+                <h2 class="section-title">Why Build a Career in a Charter School?</h2>
                 <p class="section-subtitle">Charter schools offer unique opportunities for professional growth, innovation, and meaningful impact</p>
             </div>
 
@@ -908,7 +1068,79 @@
         </div>
     </section>
 
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Choose Your Registration Type</h2>
+                <p class="modal-subtitle">Select the option that best describes you</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-options">
+                    <a href="#register-teacher" class="modal-option-card" data-modal-close>
+                        <div class="modal-option-icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <h3 class="modal-option-title">Job Seeker</h3>
+                        <p class="modal-option-description">I'm a teacher or school professional looking for opportunities</p>
+                    </a>
+                    <a href="#register-school" class="modal-option-card" data-modal-close>
+                        <div class="modal-option-icon">
+                            <span class="material-icons">business</span>
+                        </div>
+                        <h3 class="modal-option-title">School Employer</h3>
+                        <p class="modal-option-description">I'm hiring for a charter school organization</p>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCloseBtn" class="modal-close-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal functionality
+        const modal = document.getElementById('registrationModal');
+        const quickRegisterBtn = document.getElementById('quickRegisterBtn');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalOptionCards = document.querySelectorAll('[data-modal-close]');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        quickRegisterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        modalOptionCards.forEach(card => {
+            card.addEventListener('click', () => {
+                closeModal();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
         // Countdown timer functionality
         function updateCountdown() {
             const eventDate = new Date('2025-03-31T23:59:59').getTime();
@@ -964,5 +1196,8 @@
             });
         });
     </script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
