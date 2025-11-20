@@ -5,53 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro New York Online Career Fair - Jan 15, 2026</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design for Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet">
 
-    <!-- Material Design 3 Web Components -->
+    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
         :root {
-            /* Conversion-Optimized Color Scheme - Based on CSJ Logo */
-            /* Primary - Deep Forest Green (CTAs, Actions) */
-            --md-sys-color-primary: #2d5f3f;
+            /* Material Design for Bootstrap - Base Theme Colors */
+            --mdb-primary: #3B71CA;
+            --mdb-secondary: #9FA6B2;
+            --mdb-success: #14A44D;
+            --mdb-danger: #DC4C64;
+            --mdb-warning: #E4A11B;
+            --mdb-info: #54B4D3;
+            --mdb-light: #FBFBFB;
+            --mdb-dark: #332D2D;
+
+            /* Mapped for compatibility */
+            --md-sys-color-primary: #3B71CA;
             --md-sys-color-on-primary: #FFFFFF;
-            --md-sys-color-primary-container: #e8f3eb;
-            --md-sys-color-on-primary-container: #1a3a25;
+            --md-sys-color-primary-container: #e3edf9;
+            --md-sys-color-on-primary-container: #1d3865;
 
-            /* Secondary - Warm Coral (Urgency, Accents) */
-            --md-sys-color-secondary: #ff6b6b;
+            --md-sys-color-secondary: #9FA6B2;
             --md-sys-color-on-secondary: #FFFFFF;
-            --md-sys-color-secondary-container: #ffe5e5;
-            --md-sys-color-on-secondary-container: #8a2424;
+            --md-sys-color-secondary-container: #f0f1f3;
+            --md-sys-color-on-secondary-container: #4f5359;
 
-            /* Tertiary - Golden Accent (Premium, Achievement) */
-            --md-sys-color-tertiary: #f4a259;
+            --md-sys-color-tertiary: #54B4D3;
             --md-sys-color-on-tertiary: #FFFFFF;
 
+            --md-sys-color-success: #14A44D;
+            --md-sys-color-warning: #E4A11B;
+            --md-sys-color-error: #DC4C64;
+
             /* Surface Colors */
-            --md-sys-color-surface: #fef9f5;
-            --md-sys-color-on-surface: #2b2d42;
-            --md-sys-color-surface-variant: #f5f5f0;
-            --md-sys-color-on-surface-variant: #4a4a4a;
-            --md-sys-color-outline: #d4d4ce;
-
-            /* Backgrounds */
-            --color-soft-sage: #e8f3eb;
-            --color-warm-cream: #fef9f5;
-            --color-charcoal: #2b2d42;
-
-            /* Error */
-            --md-sys-color-error: #dc2626;
-            --md-sys-color-error-container: #fee2e2;
+            --md-sys-color-surface: #FBFBFB;
+            --md-sys-color-on-surface: #332D2D;
+            --md-sys-color-surface-variant: #f5f5f5;
+            --md-sys-color-on-surface-variant: #6c757d;
+            --md-sys-color-outline: #dee2e6;
 
             /* Elevation shadows */
-            --md-sys-elevation-1: 0 1px 2px 0 rgba(43, 45, 66, 0.1), 0 1px 3px 1px rgba(43, 45, 66, 0.08);
-            --md-sys-elevation-2: 0 1px 2px 0 rgba(43, 45, 66, 0.12), 0 2px 6px 2px rgba(43, 45, 66, 0.1);
-            --md-sys-elevation-3: 0 4px 8px 3px rgba(43, 45, 66, 0.12), 0 1px 3px 0 rgba(43, 45, 66, 0.15);
-            --md-sys-elevation-4: 0 6px 10px 4px rgba(43, 45, 66, 0.15), 0 2px 3px 0 rgba(43, 45, 66, 0.2);
+            --md-sys-elevation-1: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+            --md-sys-elevation-2: 0 4px 10px 0 rgba(0,0,0,.16), 0 4px 20px 0 rgba(0,0,0,.12);
+            --md-sys-elevation-3: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+            --md-sys-elevation-4: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
         }
 
         * {
@@ -62,8 +64,8 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: var(--color-warm-cream);
-            color: var(--color-charcoal);
+            background: var(--mdb-light);
+            color: var(--mdb-dark);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
@@ -82,7 +84,7 @@
         .app-bar-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 10px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -200,7 +202,7 @@
             color: var(--md-sys-color-on-primary-container);
             text-align: center;
             padding: 16px 24px;
-            margin-top: 105px;
+            margin-top: 93px;
             font-weight: 500;
             display: flex;
             justify-content: center;
@@ -210,8 +212,8 @@
         }
 
         .md-chip {
-            background: var(--md-sys-color-secondary);
-            color: var(--md-sys-color-on-secondary);
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
             padding: 6px 16px;
             border-radius: 8px;
             font-size: 0.875rem;
@@ -225,7 +227,7 @@
 
         /* Hero Section with Material Design */
         .hero-section {
-            background: linear-gradient(135deg, #e8f3eb 0%, #f0f7f2 50%, #f5faf6 100%);
+            background: linear-gradient(135deg, #e3edf9 0%, #ebf2fb 50%, #f3f7fd 100%);
             padding: 0 24px 80px;
             margin-top: -60px;
             padding-top: 120px;
@@ -243,8 +245,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(45, 95, 63, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(244, 162, 89, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(59, 113, 202, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(84, 180, 211, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -484,16 +486,16 @@
 
         /* For Candidates Section */
         .for-candidates-section {
-            background: var(--color-warm-cream);
+            background: var(--mdb-light);
             padding: 80px 24px;
-            border-top: 4px solid var(--md-sys-color-primary);
+            border-top: 4px solid var(--mdb-primary);
         }
 
         /* For Schools Section */
         .for-schools-section {
-            background: linear-gradient(135deg, #fef9f5 0%, #fdf6f0 50%, #fcf3eb 100%);
+            background: linear-gradient(135deg, #f0f1f3 0%, #f5f6f7 50%, #fafbfc 100%);
             padding: 80px 24px;
-            border-top: 4px solid var(--md-sys-color-primary);
+            border-top: 4px solid var(--mdb-success);
             position: relative;
         }
 
@@ -505,8 +507,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(45, 95, 63, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(244, 162, 89, 0.06) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(20, 164, 77, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 113, 202, 0.05) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -566,21 +568,21 @@
         /* For Schools benefit cards - distinct styling */
         .for-schools-section .benefit-card {
             background: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(45, 95, 63, 0.15);
+            border: 2px solid rgba(20, 164, 77, 0.2);
             backdrop-filter: blur(10px);
         }
 
         .for-schools-section .benefit-card:hover {
-            border-color: var(--md-sys-color-primary);
+            border-color: var(--mdb-success);
             background: rgba(255, 255, 255, 1);
         }
 
         .for-schools-section .benefit-icon {
-            background: var(--md-sys-color-primary-container);
+            background: #e8f7ed;
         }
 
         .for-schools-section .benefit-icon .material-icons {
-            color: var(--md-sys-color-primary);
+            color: var(--mdb-success);
         }
 
         .benefit-icon {
@@ -1216,7 +1218,7 @@
         });
     </script>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Material Design for Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 </body>
 </html>
