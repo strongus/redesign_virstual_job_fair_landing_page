@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro New York Online Career Fair - Jan 15, 2026</title>
+
+    <!-- Material Design for Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Shared Styles -->
+    <link href="css/career-fair.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Material Design Top App Bar -->
+    <header class="md-top-app-bar">
+        <div class="app-bar-container">
+            <div class="logo-container">
+                <img src="/images/csj-logo.png" alt="Charter School Jobs" />
+            </div>
+            <nav class="nav-actions">
+                <a href="#for-teachers" class="md-text-button">For Candidates</a>
+                <a href="#for-schools" class="md-text-button">For Schools</a>
+                <button id="quickRegisterBtn" class="md-filled-button">
+                    Quick Register
+                    <span class="material-icons" style="font-size: 18px;">arrow_forward</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Material Banner -->
+    <div class="md-banner">
+        <span>Early Bird School Registration Discount Ends Soon</span>
+        <span class="md-chip" data-countdown-date="2025-12-31T23:59:59">
+            <span class="material-icons" style="font-size: 18px;">schedule</span> Loading...
+        </span>
+        <span class="md-chip info" data-counter-target="324" data-counter-label="Candidates Registered">300+ Candidates Registered</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="md-headline-large">
+                    Connect with <span class="highlight">30+ NYC Charter Schools</span> in One Day
+                </h1>
+
+                <p class="md-headline-medium">
+                    Virtual Career Fair for Certified Teachers & School Professionals
+                </p>
+
+                <div class="event-details">
+                    <div class="event-detail">
+                        <span class="material-icons">event</span>
+                        <span>Thursday, January 15, 2026</span>
+                    </div>
+                    <div class="event-detail">
+                        <span class="material-icons">schedule</span>
+                        <span>4:00 PM - 7:00 PM EST</span>
+                    </div>
+                    <div class="event-detail">
+                        <span class="material-icons">videocam</span>
+                        <span>100% Virtual Event</span>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#register-teacher" class="md-filled-button large">
+                        Register as Job Seeker
+                        <span class="material-icons" style="font-size: 20px;">arrow_forward</span>
+                    </a>
+                    <a href="#register-school" class="md-outlined-button large">
+                        Register Your School
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="/images/smiling-woman-onscreen-video-meeting.jpg" alt="Virtual Meeting Interface" />
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- School Logos Section -->
+    <section class="schools-section">
+        <div class="schools-container">
+            <p class="schools-label">Trusted by Leading NYC Charter Schools</p>
+            <div class="schools-grid">
+                <img src="/images/kipp-nyc-logo.png" alt="KIPP NYC" class="school-logo">
+                <img src="/images/uncommon-logo.jpg" alt="Uncommon Schools" class="school-logo">
+                <img src="/images/achievement-first-logo.png" alt="Achievement First" class="school-logo">
+                <img src="/images/ascend-logo.png" alt="Ascend Charter" class="school-logo">
+                <img src="/images/harlem-village-academies-logo.png" alt="Harlem Village Academies" class="school-logo">
+                <img src="/images/bedford-stuyvesant-new-beginnings-logo.jpeg" alt="Bedford Stuyvesant New Beginnings Charter School" class="school-logo">
+                <img src="/images/east-harlem-scholars-academies-logo.png" alt="East Harlem Scholars Academies" class="school-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- For Candidates Section -->
+    <section id="for-teachers" class="for-candidates-section">
+        <div class="for-candidates-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="event-badge" style="margin: 0 auto;">
+                    <span class="material-icons" style="font-size: 20px;">school</span>
+                    <span>For Job Seekers</span>
+                </div>
+                <h2 class="section-title">Why Build a Career in a Charter School?</h2>
+                <p class="section-subtitle">Charter schools offer unique opportunities for professional growth, innovation, and meaningful impact</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">psychology</span>
+                    </div>
+                    <h3 class="benefit-title">Autonomy & Innovation</h3>
+                    <p class="benefit-description">Greater freedom in curriculum design, teaching methods, and lesson planning. Explore project-based learning, self-guided approaches, and innovative pedagogies.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">groups</span>
+                    </div>
+                    <h3 class="benefit-title">Smaller Class Sizes</h3>
+                    <p class="benefit-description">Lower student-to-teacher ratios mean more individualized attention for students and reduced stress. Build deeper relationships with each learner.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">rocket_launch</span>
+                    </div>
+                    <h3 class="benefit-title">Mission-Driven Culture</h3>
+                    <p class="benefit-description">Work in schools aligned with specific educational philosophies—STEM focus, college prep, arts integration—surrounded by passionate, like-minded educators.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">trending_up</span>
+                    </div>
+                    <h3 class="benefit-title">Professional Development</h3>
+                    <p class="benefit-description">Extensive investment in professional growth opportunities. Benefit from ongoing coaching, training, and development—especially valuable for new teachers.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">diversity_3</span>
+                    </div>
+                    <h3 class="benefit-title">Collaborative Environment</h3>
+                    <p class="benefit-description">Experience a "startup" atmosphere with supportive leadership, hands-on administrators, and strong parent engagement in student success.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">workspace_premium</span>
+                    </div>
+                    <h3 class="benefit-title">Results-Oriented Focus</h3>
+                    <p class="benefit-description">Join schools with clear accountability measures and performance goals, creating a culture of excellence and student achievement.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-container">
+                <a href="#register-teacher" class="md-filled-button large">
+                    Start Your Application Now
+                    <span class="material-icons" style="font-size: 20px;">arrow_forward</span>
+                </a>
+                <p class="cta-note">Registration closes January 10, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Schools Section -->
+    <section id="for-schools" class="for-schools-section">
+        <div class="for-schools-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="event-badge" style="margin: 0 auto;">
+                    <span class="material-icons" style="font-size: 20px;">business</span>
+                    <span>For Schools</span>
+                </div>
+                <h2 class="section-title">Streamline Your Hiring Process</h2>
+                <p class="section-subtitle">Connect with qualified, pre-vetted candidates in one efficient virtual event</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">schedule</span>
+                    </div>
+                    <h3 class="benefit-title">Save Time</h3>
+                    <p class="benefit-description">Meet exclusively with candidates you choose—no more fruitless conversations with people you would never hire. Focus your time on qualified talent.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">verified_user</span>
+                    </div>
+                    <h3 class="benefit-title">Vetted Candidates</h3>
+                    <p class="benefit-description">All participating candidates are prescreened by our team for minimum qualifications to be classroom teachers or work as non-instructional school professionals.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">security</span>
+                    </div>
+                    <h3 class="benefit-title">Safe & Secure</h3>
+                    <p class="benefit-description">Video meetings take place in virtual rooms exclusively created for that specific employer/candidate interaction. Your privacy is protected.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">web</span>
+                    </div>
+                    <h3 class="benefit-title">Easy Setup</h3>
+                    <p class="benefit-description">No need to install additional software on your computer or device—the entire virtual event system runs through your web browser.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">people</span>
+                    </div>
+                    <h3 class="benefit-title">Quality Candidates</h3>
+                    <p class="benefit-description">Access a curated pool of certified teachers and school professionals actively seeking positions at NYC charter schools.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <span class="material-icons">star</span>
+                    </div>
+                    <h3 class="benefit-title">Proven Track Record</h3>
+                    <p class="benefit-description">Charter School Jobs® has been holding career fairs for NYC charter schools for over 20 years and helped clients hire 7,500+ certified teachers since 2003.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-container">
+                <a href="#register-school" class="md-filled-button large">
+                    Register Your School
+                    <span class="material-icons" style="font-size: 20px;">arrow_forward</span>
+                </a>
+                <p class="cta-note">Early bird discount available until December 31, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Choose Your Registration Type</h2>
+                <p class="modal-subtitle">Select the option that best describes you</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-options">
+                    <a href="#register-teacher" class="modal-option-card" data-modal-close>
+                        <div class="modal-option-icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <h3 class="modal-option-title">Job Seeker</h3>
+                        <p class="modal-option-description">I'm a teacher or school professional looking for opportunities</p>
+                    </a>
+                    <a href="#register-school" class="modal-option-card" data-modal-close>
+                        <div class="modal-option-icon">
+                            <span class="material-icons">business</span>
+                        </div>
+                        <h3 class="modal-option-title">School Employer</h3>
+                        <p class="modal-option-description">I'm hiring for a charter school organization</p>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCloseBtn" class="modal-close-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Material Design for Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+
+    <!-- Shared Scripts -->
+    <script src="js/career-fair.js"></script>
+</body>
+</html>

@@ -1,0 +1,976 @@
+/* ==========================================================================
+   Career Fair Landing Pages - Shared Styles
+   Used by both virtual and in-person career fair pages
+   ========================================================================== */
+
+:root {
+    /* Material Design for Bootstrap - Base Theme Colors */
+    --mdb-primary: #3B71CA;
+    --mdb-secondary: #9FA6B2;
+    --mdb-success: #14A44D;
+    --mdb-danger: #DC4C64;
+    --mdb-warning: #E4A11B;
+    --mdb-info: #54B4D3;
+    --mdb-light: #FBFBFB;
+    --mdb-dark: #332D2D;
+
+    /* Mapped for compatibility */
+    --md-sys-color-primary: #3B71CA;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #e3edf9;
+    --md-sys-color-on-primary-container: #1d3865;
+
+    --md-sys-color-secondary: #9FA6B2;
+    --md-sys-color-on-secondary: #FFFFFF;
+    --md-sys-color-secondary-container: #f0f1f3;
+    --md-sys-color-on-secondary-container: #4f5359;
+
+    --md-sys-color-tertiary: #54B4D3;
+    --md-sys-color-on-tertiary: #FFFFFF;
+
+    --md-sys-color-success: #14A44D;
+    --md-sys-color-warning: #E4A11B;
+    --md-sys-color-error: #DC4C64;
+
+    /* Surface Colors */
+    --md-sys-color-surface: #FBFBFB;
+    --md-sys-color-on-surface: #332D2D;
+    --md-sys-color-surface-variant: #f5f5f5;
+    --md-sys-color-on-surface-variant: #6c757d;
+    --md-sys-color-outline: #dee2e6;
+
+    /* Elevation shadows */
+    --md-sys-elevation-1: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    --md-sys-elevation-2: 0 4px 10px 0 rgba(0,0,0,.16), 0 4px 20px 0 rgba(0,0,0,.12);
+    --md-sys-elevation-3: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+    --md-sys-elevation-4: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--mdb-light);
+    color: var(--mdb-dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Material Design Top App Bar
+   ========================================================================== */
+
+.md-top-app-bar {
+    background: var(--md-sys-color-surface);
+    box-shadow: var(--md-sys-elevation-2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 80px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-container img {
+    height: 75px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Material Design Buttons
+   ========================================================================== */
+
+.md-text-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.1px;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    color: var(--md-sys-color-primary);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.md-text-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--md-sys-color-primary);
+    opacity: 0.12;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.md-text-button:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.md-filled-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.1px;
+    padding: 10px 24px;
+    border: none;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: var(--md-sys-elevation-1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.md-filled-button:hover {
+    box-shadow: var(--md-sys-elevation-2);
+    transform: translateY(-1px);
+}
+
+.md-filled-button:active {
+    box-shadow: var(--md-sys-elevation-1);
+    transform: translateY(0);
+}
+
+.md-outlined-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.1px;
+    padding: 10px 24px;
+    border: 1px solid var(--md-sys-color-outline);
+    background: transparent;
+    color: var(--md-sys-color-primary);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.md-outlined-button:hover {
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.md-filled-button.large {
+    padding: 16px 32px;
+    font-size: 1rem;
+    border-radius: 24px;
+}
+
+.md-outlined-button.large {
+    padding: 16px 32px;
+    font-size: 1rem;
+    border-radius: 24px;
+}
+
+/* ==========================================================================
+   Banner & Chips
+   ========================================================================== */
+
+.md-banner {
+    background: transparent;
+    color: var(--md-sys-color-on-primary-container);
+    text-align: center;
+    padding: 10px 24px;
+    margin-top: 93px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.md-chip {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.md-chip.info {
+    background: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-on-tertiary);
+}
+
+.md-chip.success {
+    background: var(--md-sys-color-success);
+    color: var(--md-sys-color-on-primary);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, #e3edf9 0%, #ebf2fb 50%, #f3f7fd 100%);
+    padding: 0 24px 80px;
+    margin-top: -60px;
+    padding-top: 120px;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(59, 113, 202, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(84, 180, 211, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+.md-headline-large {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 12px;
+}
+
+.md-headline-medium {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 24px;
+}
+
+.md-label-large {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+.highlight {
+    color: var(--md-sys-color-primary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Event Badge
+   ========================================================================== */
+
+.event-badge {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    gap: 8px;
+}
+
+.for-schools-section .event-badge {
+    background: var(--md-sys-color-secondary);
+    color: var(--md-sys-color-on-secondary);
+}
+
+/* ==========================================================================
+   Event Details
+   ========================================================================== */
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1rem;
+}
+
+.event-detail .material-icons {
+    color: var(--md-sys-color-primary);
+    font-size: 24px;
+}
+
+/* ==========================================================================
+   CTA Group
+   ========================================================================== */
+
+.cta-group {
+    display: flex;
+    gap: 16px;
+    margin: 28px 0;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Stats Grid & Cards
+   ========================================================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.md-card {
+    background: var(--md-sys-color-surface);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: var(--md-sys-elevation-1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-card:hover {
+    box-shadow: var(--md-sys-elevation-3);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--md-sys-color-tertiary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Hero Visual
+   ========================================================================== */
+
+.hero-visual {
+    position: relative;
+}
+
+.visual-card {
+    position: relative;
+}
+
+.visual-card img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--md-sys-elevation-3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visual-card img:hover {
+    box-shadow: var(--md-sys-elevation-4);
+    transform: translateY(-2px);
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--md-sys-color-surface);
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: var(--md-sys-elevation-3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.floating-card.card-1 {
+    top: -24px;
+    right: -24px;
+    animation-delay: 0s;
+}
+
+.floating-stat-value {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--md-sys-color-primary);
+    margin-bottom: 4px;
+}
+
+.floating-stat-label {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ==========================================================================
+   Alert Box (In-Person Page)
+   ========================================================================== */
+
+.alert-box {
+    background: #fff3cd;
+    border: 2px solid var(--md-sys-color-warning);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    display: flex;
+    align-items: start;
+    gap: 16px;
+}
+
+.alert-box .material-icons {
+    color: var(--md-sys-color-warning);
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.alert-content {
+    flex: 1;
+}
+
+.alert-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--mdb-dark);
+    margin-bottom: 8px;
+}
+
+.alert-text {
+    font-size: 0.9375rem;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   What to Bring Section (In-Person Page)
+   ========================================================================== */
+
+.what-to-bring {
+    margin: 32px 0;
+}
+
+.what-to-bring-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.what-to-bring-title .material-icons {
+    color: var(--md-sys-color-primary);
+    font-size: 32px;
+}
+
+.what-to-bring-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 44px;
+}
+
+.what-to-bring-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.what-to-bring-item .material-icons {
+    color: var(--md-sys-color-success);
+    font-size: 20px;
+}
+
+/* ==========================================================================
+   School Logos Section
+   ========================================================================== */
+
+.schools-section {
+    background: var(--md-sys-color-surface);
+    padding: 32px 24px 80px;
+}
+
+.schools-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.schools-label {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.schools-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+}
+
+.school-logo {
+    max-height: 80px;
+    max-width: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: grayscale(100%);
+}
+
+.school-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   For Candidates Section
+   ========================================================================== */
+
+.for-candidates-section {
+    background: var(--mdb-light);
+    padding: 80px 24px;
+    border-top: 4px solid var(--mdb-primary);
+}
+
+.for-candidates-container,
+.for-schools-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   For Schools Section
+   ========================================================================== */
+
+.for-schools-section {
+    background: linear-gradient(135deg, #f0f1f3 0%, #f5f6f7 50%, #fafbfc 100%);
+    padding: 80px 24px;
+    border-top: 4px solid var(--mdb-success);
+    position: relative;
+}
+
+.for-schools-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(20, 164, 77, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 113, 202, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--md-sys-color-on-surface);
+    margin: 16px 0;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--md-sys-color-on-surface-variant);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Benefits Grid
+   ========================================================================== */
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.benefit-card {
+    background: var(--md-sys-color-surface);
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: var(--md-sys-elevation-1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-card:hover {
+    box-shadow: var(--md-sys-elevation-3);
+    transform: translateY(-4px);
+}
+
+/* For Schools benefit cards - distinct styling */
+.for-schools-section .benefit-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(20, 164, 77, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.for-schools-section .benefit-card:hover {
+    border-color: var(--mdb-success);
+    background: rgba(255, 255, 255, 1);
+}
+
+.for-schools-section .benefit-icon {
+    background: #e8f7ed;
+}
+
+.for-schools-section .benefit-icon .material-icons {
+    color: var(--mdb-success);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--md-sys-color-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.benefit-icon .material-icons {
+    font-size: 32px;
+    color: var(--md-sys-color-primary);
+}
+
+.benefit-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 12px;
+}
+
+.benefit-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ==========================================================================
+   CTA Container
+   ========================================================================== */
+
+.cta-container {
+    margin-top: 64px;
+    text-align: center;
+}
+
+.cta-note {
+    margin-top: 16px;
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Modal Styles
+   ========================================================================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-dialog {
+    background: var(--md-sys-color-surface);
+    border-radius: 28px;
+    box-shadow: var(--md-sys-elevation-4);
+    max-width: 560px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+}
+
+.modal-subtitle {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 4px;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.modal-option-card {
+    background: var(--md-sys-color-surface);
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    padding: 32px 24px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+}
+
+.modal-option-card:hover {
+    border-color: var(--md-sys-color-primary);
+    background: var(--md-sys-color-primary-container);
+    transform: translateY(-2px);
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.modal-option-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--md-sys-color-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-option-card:hover .modal-option-icon {
+    background: var(--md-sys-color-primary);
+}
+
+.modal-option-icon .material-icons {
+    font-size: 32px;
+    color: var(--md-sys-color-primary);
+}
+
+.modal-option-card:hover .modal-option-icon .material-icons {
+    color: var(--md-sys-color-on-primary);
+}
+
+.modal-option-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+}
+
+.modal-option-description {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.5;
+}
+
+.modal-footer {
+    padding: 16px 24px 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-close-button {
+    background: transparent;
+    border: none;
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .md-headline-large {
+        font-size: 2.5rem;
+    }
+
+    .md-headline-medium {
+        font-size: 1.25rem;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .nav-actions .md-text-button {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-details {
+        align-items: center;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .schools-grid {
+        gap: 24px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .modal-options {
+        grid-template-columns: 1fr;
+    }
+
+    .what-to-bring-list {
+        margin-left: 0;
+    }
+}
